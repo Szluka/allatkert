@@ -1,0 +1,3 @@
+# Project exclude paths
+/allatkert-core/target/
+/allatkert-desktop/target/

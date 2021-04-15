@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AddAdoptiveController">
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="34.40000190734863" minHeight="0.0" prefHeight="30.4" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="600.0" GridPane.columnSpan="2">
+         <children>
+            <Label text="Add Adoptive">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <Label text="Name" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label text="Email" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addAdoptive" text="Save" />
+            <Button mnemonicParsing="false" onAction="#goAdoptive" text="Cancel">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <TextField fx:id="adoptiveNameAdd" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="adoptiveEmailAdd" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </TextField>
+   </children>
+</GridPane>

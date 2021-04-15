@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.EditAnimalController">
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints maxHeight="84.0" minHeight="0.0" prefHeight="34.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2">
+         <children>
+            <Label text="Edit Animal">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <Label text="Name" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label text="Year of birth" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label text="Introduction" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Label text="Picture" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveButton" text="Save" />
+            <Button mnemonicParsing="false" onAction="#backToAnimal" text="Cancel">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <TextField fx:id="animalNameEdit" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="animalYearEdit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="animalIntroEdit" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+         <children>
+            <ComboBox fx:id="specieComboBox" prefWidth="150.0" />
+         </children>
+      </VBox>
+      <Label text="Specie" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Label>
+      <Button mnemonicParsing="false" onAction="#choosePicture" text="Choose..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   </children>
+</GridPane>
