@@ -1,0 +1,43 @@
+.navbar-nav{
+    margin: auto;
+    font-size: 24px;
+}
+
+.nav-link{
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    background-color: #333333 !important;
+}
+
+.bg_dark{
+    background-color: #232323 !important;
+}
+
+.nav_item:hover {
+    background-color: #333333 !important;
+}
+
+.kep {
+    width: 100px;
+    height: 50px;
+    filter: blur(10px) grayscale(100%);
+    transition: 0.3s;
+}
+
+.kep:hover {
+    height: 100px;
+    filter: blur(0px);
+    transition: 0.3s;
+}
+
+.font-l{
+    font-size: 22px;
+}
+
+table {
+    font-size: 20px;
+    vertical-align: center;
+    text-align: center;
+}

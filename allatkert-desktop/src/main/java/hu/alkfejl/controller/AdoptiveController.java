@@ -87,6 +87,7 @@ public class AdoptiveController implements Initializable {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/fxml/primary.fxml"));
             Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -105,8 +106,8 @@ public class AdoptiveController implements Initializable {
             loader.setLocation(getClass().getResource("/fxml/edit_adoptive.fxml"));
             Parent parent = loader.load();
 
-
             Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             EditAdoptiveController controller = loader.getController();
             controller.setAdoptive(adoptive);
@@ -143,6 +144,7 @@ public class AdoptiveController implements Initializable {
             Parent parent = loader.load();
 
             Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 

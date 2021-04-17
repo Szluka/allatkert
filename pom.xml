@@ -11,6 +11,7 @@
     <modules>
         <module>allatkert-core</module>
         <module>allatkert-desktop</module>
+        <module>allatkert-web</module>
     </modules>
 
     <properties>

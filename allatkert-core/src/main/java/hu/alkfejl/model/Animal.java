@@ -1,10 +1,11 @@
 package hu.alkfejl.model;
 
-import javafx.beans.Observable;
 import javafx.beans.property.*;
-import javafx.collections.ObservableList;
 
 import java.util.Arrays;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Animal {
 
@@ -22,6 +23,19 @@ public class Animal {
     private IntegerProperty year = new SimpleIntegerProperty(this, "year");
     private StringProperty intro = new SimpleStringProperty(this, "intro");
     private StringProperty picture = new SimpleStringProperty(this, "picture");
+    private IntegerProperty adopted = new SimpleIntegerProperty(this, "adopted");
+
+    public int getAdopted() {
+        return adopted.get();
+    }
+
+    public IntegerProperty adoptedProperty() {
+        return adopted;
+    }
+
+    public void setAdopted(int adopted) {
+        this.adopted.set(adopted);
+    }
 
     public String getPicture() {
         return picture.get();
@@ -108,6 +122,7 @@ public class Animal {
         this.intro.set(intro);
     }
 
+
     /* ENUM */
     public enum Species{
         Dog("Dog"),
@@ -127,6 +142,13 @@ public class Animal {
 
         public StringProperty valueProperty() {
             return value;
+        }
+
+        public static List<String> getSpeciesList()
+        {
+            List<String> list = EnumSet.allOf(Species.class).stream().map(Species::name).collect(Collectors.toList());
+            System.out.println(list);
+            return list;
         }
 
         @Override

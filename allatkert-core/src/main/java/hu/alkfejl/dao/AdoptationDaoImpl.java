@@ -1,6 +1,8 @@
 package hu.alkfejl.dao;
 
 import hu.alkfejl.model.Adoptation;
+import hu.alkfejl.model.AdoptationWeb;
+import hu.alkfejl.model.AnimalWeb;
 
 import java.io.IOException;
 import java.sql.*;
@@ -10,6 +12,7 @@ import java.util.Properties;
 
 public class AdoptationDaoImpl implements AdoptationDao {
 
+    private static final String INSERT_adoptation = "INSERT INTO adoptation (adoptiveId, animalId, date, donationType, donationValue, donationFreq) VALUES (?,?,?,?,?,?)";
     Properties props = new Properties();
     private String URL;
 
@@ -49,6 +52,28 @@ public class AdoptationDaoImpl implements AdoptationDao {
             System.err.println("HIBA:" + e);
         }
         return list;
+    }
+
+    /** WEB */
+
+    @Override
+    public void add(AdoptationWeb adoptationWeb) {
+            try {
+                Connection con = DriverManager.getConnection(URL);
+                PreparedStatement statement = con.prepareStatement(INSERT_adoptation);
+
+                statement.setInt(1, adoptationWeb.getAdoptiveId());
+                statement.setInt(2, adoptationWeb.getAnimalId());
+                statement.setString(3, adoptationWeb.getDate());
+                statement.setString(4, adoptationWeb.getDonationType());
+                statement.setInt(5, adoptationWeb.getDonationValue());
+                statement.setString(6, adoptationWeb.getDonationFreq());
+                statement.execute();
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+
     }
 
 }

@@ -1,6 +1,8 @@
 package hu.alkfejl.dao;
 
 import hu.alkfejl.model.Adoptive;
+import hu.alkfejl.model.AdoptiveWeb;
+import hu.alkfejl.model.AnimalWeb;
 
 import java.io.IOException;
 import java.sql.*;
@@ -18,9 +20,10 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
 
     public AdoptiveDaoImpl() {
         try {
+            Class.forName("org.sqlite.JDBC");
             props.load(AdoptiveDaoImpl.class.getResourceAsStream("/application.properties"));
             URL = props.getProperty("db.url");
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -49,6 +52,7 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
         }
         return list;
     }
+
 
     @Override
     public void add(Adoptive adoptive) {
@@ -99,4 +103,44 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
             throwables.printStackTrace();
         }
     }
+
+    /** WEB */
+
+    @Override
+    public void add(AdoptiveWeb adoptive) {
+        try {
+            Connection con = DriverManager.getConnection(URL);
+            PreparedStatement statement = con.prepareStatement(INSERT_animal);
+
+            statement.setString(1, adoptive.getName());
+            statement.setString(2, adoptive.getEmail());
+            statement.execute();
+            con.close();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+
+    }
+
+    @Override
+    public List<AdoptiveWeb> list() {
+        List<AdoptiveWeb> list = new ArrayList<>();
+
+        try {
+            String sql = "SELECT * FROM adoptive";
+            Connection con = DriverManager.getConnection(URL);
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                AdoptiveWeb a = new AdoptiveWeb(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
+                list.add(a);
+            }
+            rs.close();
+            con.close();
+        } catch (SQLException e) {
+            System.err.println("HIBA:" + e);
+        }
+        return list;
+    }
+
 }

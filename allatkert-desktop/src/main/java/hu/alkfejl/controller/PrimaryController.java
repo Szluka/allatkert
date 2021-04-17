@@ -97,6 +97,7 @@ public class PrimaryController implements Initializable {
 
 
             Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             EditAnimalController controller = loader.getController();
             controller.setAnimal(animal);
@@ -145,7 +146,7 @@ public class PrimaryController implements Initializable {
             Parent parent = loader.load();
 
             Scene scene = new Scene(parent);
-
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
@@ -166,7 +167,7 @@ public class PrimaryController implements Initializable {
             Parent parent = loader.load();
 
             Scene scene = new Scene(parent);
-
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
@@ -187,7 +188,7 @@ public class PrimaryController implements Initializable {
             Parent parent = loader.load();
 
             Scene scene = new Scene(parent);
-
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 

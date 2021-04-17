@@ -63,6 +63,7 @@ public class AddAnimalController implements Initializable {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/fxml/primary.fxml"));
             Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/zooDesktopStyle.css");
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

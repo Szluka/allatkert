@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AdoptationController">
+<BorderPane styleClass="borderpane" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AdoptationController">
     <left>
         <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
@@ -22,12 +22,12 @@
    <center>
           <TableView fx:id="adoptationTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn fx:id="adoptiveId" prefWidth="60.0" text="Adoptive" />
-                  <TableColumn fx:id="animalId" prefWidth="60.0" text="Animal" />
-                  <TableColumn fx:id="date" prefWidth="100.0" text="Date of Adopt." />
-                  <TableColumn fx:id="donationType" prefWidth="120.0" text="Donation type" />
-                  <TableColumn fx:id="donationValue" prefWidth="60.0" text="Amount" />
-                  <TableColumn fx:id="donationFreq" prefWidth="90.0" text="Frequency" />
+                  <TableColumn styleClass="columns" fx:id="adoptiveId" prefWidth="60.0" text="Adoptive" />
+                  <TableColumn styleClass="columns" fx:id="animalId" prefWidth="60.0" text="Animal" />
+                  <TableColumn styleClass="columns" fx:id="date" prefWidth="100.0" text="Date of Adopt." />
+                  <TableColumn styleClass="columns" fx:id="donationType" prefWidth="120.0" text="Donation type" />
+                  <TableColumn styleClass="columns" fx:id="donationValue" prefWidth="60.0" text="Amount" />
+                  <TableColumn styleClass="columns" fx:id="donationFreq" prefWidth="90.0" text="Frequency" />
               </columns>
           </TableView>
    </center>

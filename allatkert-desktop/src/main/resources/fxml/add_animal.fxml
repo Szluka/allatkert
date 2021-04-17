@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AddAnimalController">
+<GridPane prefHeight="400.0" prefWidth="600.0" styleClass="gridpane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AddAnimalController">
    <columnConstraints>
       <ColumnConstraints minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
       <ColumnConstraints minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.4" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="ALWAYS" />
       <RowConstraints maxHeight="34.40000190734863" minHeight="0.0" prefHeight="30.4" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints percentHeight="10.0" />

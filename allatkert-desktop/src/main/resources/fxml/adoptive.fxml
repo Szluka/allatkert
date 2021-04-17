@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AdoptiveController">
+<BorderPane styleClass="borderpane" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.AdoptiveController">
     <left>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -32,9 +32,9 @@
    <center>
           <TableView fx:id="adoptiveTable" maxWidth="-Infinity" prefHeight="265.0" prefWidth="470.0" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn fx:id="nameColumn" prefWidth="120.0" text="Name" />
-                  <TableColumn fx:id="emailColumn" prefWidth="200.0" text="Email" />
-                  <TableColumn fx:id="actionsColumn" prefWidth="130.0" text="Actions" />
+                  <TableColumn styleClass="columns" fx:id="nameColumn" prefWidth="120.0" text="Name" />
+                  <TableColumn styleClass="columns" fx:id="emailColumn" prefWidth="200.0" text="Email" />
+                  <TableColumn styleClass="columns" fx:id="actionsColumn" prefWidth="130.0" text="Actions" />
               </columns>
           </TableView>
    </center>

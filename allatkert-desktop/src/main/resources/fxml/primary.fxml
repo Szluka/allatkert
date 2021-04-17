@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.PrimaryController">
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="borderpane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.controller.PrimaryController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
@@ -30,12 +30,12 @@
       </Label>
    </top>
    <center>
-      <TableView fx:id="animalTable" maxWidth="-Infinity" prefHeight="265.0" prefWidth="418.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="animalTable" maxWidth="-Infinity" prefHeight="250.0" prefWidth="420.0" BorderPane.alignment="CENTER">
          <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="yearColumn" prefWidth="90.0" text="Date of birth" />
-            <TableColumn fx:id="specieColumn" prefWidth="75.0" text="Specie" />
-            <TableColumn fx:id="actionsColumn" prefWidth="168.3999786376953" text="Actions" />
+            <TableColumn styleClass="columns" fx:id="nameColumn" prefWidth="100.0" resizable="false" text="Name" />
+            <TableColumn styleClass="columns" fx:id="yearColumn" prefWidth="100.0" text="Date of birth" />
+            <TableColumn styleClass="columns" fx:id="specieColumn" prefWidth="96.0" text="Specie" />
+            <TableColumn styleClass="columns" fx:id="actionsColumn" prefWidth="120.0" text="Actions" />
          </columns>
       </TableView>
    </center>
