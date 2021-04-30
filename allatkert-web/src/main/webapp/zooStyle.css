@@ -20,14 +20,15 @@
 }
 
 .kep {
-    width: 100px;
     height: 50px;
+    width: auto;
     filter: blur(10px) grayscale(100%);
     transition: 0.3s;
 }
 
 .kep:hover {
     height: 100px;
+    width: auto;
     filter: blur(0px);
     transition: 0.3s;
 }
@@ -37,6 +38,7 @@
 }
 
 table {
+    border: 2px solid #7f7f7f !important;
     font-size: 20px;
     vertical-align: center;
     text-align: center;

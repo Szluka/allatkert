@@ -26,34 +26,34 @@
 </nav>
 
 <div class="container">
-    <div class="container mt-3 mb-3"></div>
+    <div class="container"></div>
 
     <form action="animallist" method="post">
         <div class="row">
-            <div class="col-2">
-                <a href="animal.jsp" class="btn btn-light" role="button">New Animal</a>
+            <div class="col-2"></div>
+            <div class="col">
+                <select class="form-control custom-select" id="tipusok" name="tipusok">
+                    <option value="name">Name</option>
+                    <option value="year">Year</option>
+                    <option value="specie">Specie</option>
+                    <option value="intro">Intro</option>
+                </select>
             </div>
+
             <div class="col-6">
                 <input type="text" class="form-control" name="kereses" id="kereses">
             </div>
-            <div class="col-2">
-                <select class="form-control custom-select" id="opciok" name="opciok">
-                    <option>Name</option>
-                    <option>Year</option>
-                    <option>Specie</option>
-                    <option>Intro</option>
-                </select>
-            </div>
-            <div class="col-2">
+
+            <div class="col-3">
                 <button type="submit" class="btn btn-light">Search</button>
             </div>
         </div>
     </form>
 
-    <table class="table text-light">
+    <table class="table table-dark table-hover">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col" style="display: none"></th>
             <th scope="col">Name</th>
             <th scope="col">Year</th>
             <th scope="col">Specie</th>
@@ -65,13 +65,13 @@
         <tbody>
         <c:forEach var="animal" items="${animalList}">
             <tr>
-                <th scope="row"><c:out value="${animal.id}"/></th>
+                <th scope="row" style="display: none"><c:out value="${animal.id}"/></th>
                 <td><c:out value="${animal.name}"/></td>
                 <td><c:out value="${animal.year}"/></td>
                 <td><c:out value="${animal.specie}"/></td>
                 <td><c:out value="${animal.intro}"/></td>
                 <c:choose>
-                    <c:when test="${animal.adopted=='0'}">
+                    <c:when test="${animal.picture!=null}">
                         <td><img src="data:image/jpg;base64,${animal.picture}" class="kep"/></td>
                     </c:when>
                     <c:otherwise>

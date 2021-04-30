@@ -1,6 +1,6 @@
 import hu.alkfejl.dao.AdoptiveDao;
 import hu.alkfejl.dao.AdoptiveDaoImpl;
-import hu.alkfejl.model.AdoptiveWeb;
+import hu.alkfejl.model.Adoptive2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,12 +19,12 @@ public class AdoptiveServlet extends HttpServlet {
         resp.setContentType ("text/html; charset=UTF-8");
         req.setCharacterEncoding ("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        AdoptiveWeb adoptiveWeb = new AdoptiveWeb( req.getParameter("username"), req.getParameter("email"));
+        Adoptive2 adoptive2 = new Adoptive2( req.getParameter("username"), req.getParameter("email"));
         System.out.println("req: "+req.getParameter("username"));
-        System.out.println(adoptiveWeb.getName());
-        System.out.println(adoptiveWeb.getEmail());
+        System.out.println(adoptive2.getName());
+        System.out.println(adoptive2.getEmail());
 
-        dao.add(adoptiveWeb);
+        dao.add(adoptive2);
         resp.sendRedirect("adoptive.jsp");
     }
 }

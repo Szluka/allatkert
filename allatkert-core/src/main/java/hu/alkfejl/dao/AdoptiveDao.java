@@ -1,7 +1,7 @@
 package hu.alkfejl.dao;
 
 import hu.alkfejl.model.Adoptive;
-import hu.alkfejl.model.AdoptiveWeb;
+import hu.alkfejl.model.Adoptive2;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface AdoptiveDao {
 
     List<Adoptive> get();
 
-    List<AdoptiveWeb> list();
+    List<Adoptive2> list();
 
     void add(Adoptive adoptive);
 
@@ -17,7 +17,7 @@ public interface AdoptiveDao {
 
     void delete(Adoptive adoptive);
 
-    void add(AdoptiveWeb adoptive);
+    void add(Adoptive2 adoptive);
 
 
 }

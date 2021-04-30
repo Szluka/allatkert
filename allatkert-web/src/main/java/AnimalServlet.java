@@ -1,6 +1,6 @@
 import hu.alkfejl.dao.AnimalDao;
 import hu.alkfejl.dao.AnimalDaoImpl;
-import hu.alkfejl.model.AnimalWeb;
+import hu.alkfejl.model.Animal2;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
@@ -19,8 +19,9 @@ public class AnimalServlet extends HttpServlet {
         resp.setContentType ("text/html; charset=UTF-8");
         req.setCharacterEncoding ("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        AnimalWeb animalWeb = new AnimalWeb( req.getParameter("name"), Integer.parseInt(req.getParameter("year")), req.getParameter("specie"), req.getParameter("intro"), null, 0);
-        dao.add(animalWeb);
+        System.out.println(req.getParameter("specie"));
+        Animal2 animal2 = new Animal2( req.getParameter("name"), Integer.parseInt(req.getParameter("year")), req.getParameter("specie"), req.getParameter("intro"), null, 0);
+        dao.add(animal2);
         resp.sendRedirect("animal.jsp");
     }
 }

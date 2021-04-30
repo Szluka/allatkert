@@ -1,8 +1,7 @@
 package hu.alkfejl.dao;
 
 import hu.alkfejl.model.Adoptive;
-import hu.alkfejl.model.AdoptiveWeb;
-import hu.alkfejl.model.AnimalWeb;
+import hu.alkfejl.model.Adoptive2;
 
 import java.io.IOException;
 import java.sql.*;
@@ -12,9 +11,10 @@ import java.util.Properties;
 
 public class AdoptiveDaoImpl implements AdoptiveDao{
 
-    private static final String INSERT_animal = "INSERT INTO adoptive (name, email) VALUES (?,?)";
-    private static final String UPDATE_animal = "UPDATE adoptive SET name=?, email=? WHERE id=?";
-    private static final String DELETE_animal = "DELETE FROM adoptive WHERE id=?";
+    private static final String INSERT_adoptive = "INSERT INTO adoptive (name, email) VALUES (?,?)";
+    private static final String UPDATE_adoptive = "UPDATE adoptive SET name=?, email=? WHERE id=?";
+    private static final String DELETE_adoptive = "DELETE FROM adoptive WHERE id=?";
+    private static final String ALL_adoptive = "SELECT * FROM adoptive";
     Properties props = new Properties();
     private String URL;
 
@@ -34,10 +34,10 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
         List<Adoptive> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM adoptive";
             Connection con = DriverManager.getConnection(URL);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+            PreparedStatement stmt = con.prepareStatement(ALL_adoptive);
+
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Adoptive a = new Adoptive();
                 a.setId(rs.getInt("id"));
@@ -58,7 +58,7 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
     public void add(Adoptive adoptive) {
         try {
             Connection con = DriverManager.getConnection(URL);
-            PreparedStatement statement = con.prepareStatement(INSERT_animal);
+            PreparedStatement statement = con.prepareStatement(INSERT_adoptive);
 
             statement.setString(1, adoptive.getName());
             statement.setString(2, adoptive.getEmail());
@@ -75,7 +75,7 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
     public void update(Adoptive adoptive) {
         try {
             Connection con = DriverManager.getConnection(URL);
-            PreparedStatement statement = con.prepareStatement(UPDATE_animal);
+            PreparedStatement statement = con.prepareStatement(UPDATE_adoptive);
 
             statement.setString(1, adoptive.getName());
             statement.setString(2, adoptive.getEmail());
@@ -92,7 +92,7 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
     public void delete(Adoptive adoptive) {
 
         try(Connection c = DriverManager.getConnection(URL);
-            PreparedStatement statement = c.prepareStatement(DELETE_animal);
+            PreparedStatement statement = c.prepareStatement(DELETE_adoptive);
         ){
 
             statement.setInt(1, adoptive.getId());
@@ -107,10 +107,10 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
     /** WEB */
 
     @Override
-    public void add(AdoptiveWeb adoptive) {
+    public void add(Adoptive2 adoptive) {
         try {
             Connection con = DriverManager.getConnection(URL);
-            PreparedStatement statement = con.prepareStatement(INSERT_animal);
+            PreparedStatement statement = con.prepareStatement(INSERT_adoptive);
 
             statement.setString(1, adoptive.getName());
             statement.setString(2, adoptive.getEmail());
@@ -123,16 +123,16 @@ public class AdoptiveDaoImpl implements AdoptiveDao{
     }
 
     @Override
-    public List<AdoptiveWeb> list() {
-        List<AdoptiveWeb> list = new ArrayList<>();
+    public List<Adoptive2> list() {
+        List<Adoptive2> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM adoptive";
             Connection con = DriverManager.getConnection(URL);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+            PreparedStatement stmt = con.prepareStatement(ALL_adoptive);
+
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                AdoptiveWeb a = new AdoptiveWeb(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
+                Adoptive2 a = new Adoptive2(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
                 list.add(a);
             }
             rs.close();

@@ -1,18 +1,18 @@
 package hu.alkfejl.model;
 
-public class AdoptiveWeb {
+public class Adoptive2 {
 
     private int id;
     private String name;
     private String email;
 
-    public AdoptiveWeb(int id, String name, String email) {
+    public Adoptive2(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public AdoptiveWeb(String name, String email) {
+    public Adoptive2(String name, String email) {
         this.name = name;
         this.email = email;
     }

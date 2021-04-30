@@ -1415,34 +1415,38 @@
       <Position>6</Position>
       <DataType>BLOB|0s</DataType>
     </column>
-    <key id="512" parent="172" name="animal_pk">
+    <column id="512" parent="172" name="adopted">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="513" parent="172" name="animal_pk">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="513" parent="173" name="type">
+    <column id="514" parent="173" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="514" parent="173" name="name">
+    <column id="515" parent="173" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="515" parent="173" name="tbl_name">
+    <column id="516" parent="173" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="516" parent="173" name="rootpage">
+    <column id="517" parent="173" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="517" parent="173" name="sql">
+    <column id="518" parent="173" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="518" parent="174" name="name">
+    <column id="519" parent="174" name="name">
       <Position>1</Position>
     </column>
-    <column id="519" parent="174" name="seq">
+    <column id="520" parent="174" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

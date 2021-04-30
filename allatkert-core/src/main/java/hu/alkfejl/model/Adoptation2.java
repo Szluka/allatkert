@@ -1,6 +1,6 @@
 package hu.alkfejl.model;
 
-public class AdoptationWeb {
+public class Adoptation2 {
 
     private int id;
     private int adoptiveId;
@@ -10,7 +10,7 @@ public class AdoptationWeb {
     private int donationValue;
     private String donationFreq;
 
-    public AdoptationWeb(int id, int adoptiveId, int animalId, String date, String donationType, int donationValue, String donationFreq) {
+    public Adoptation2(int id, int adoptiveId, int animalId, String date, String donationType, int donationValue, String donationFreq) {
         this.id = id;
         this.adoptiveId = adoptiveId;
         this.animalId = animalId;
@@ -20,7 +20,7 @@ public class AdoptationWeb {
         this.donationFreq = donationFreq;
     }
 
-    public AdoptationWeb(int adoptiveId, int animalId, String date, String donationType, int donationValue, String donationFreq) {
+    public Adoptation2(int adoptiveId, int animalId, String date, String donationType, int donationValue, String donationFreq) {
         this.adoptiveId = adoptiveId;
         this.animalId = animalId;
         this.date = date;

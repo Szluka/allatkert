@@ -28,10 +28,10 @@
 <div class="container col-6 mt-5 mb-5">
     <h1 class="mx-auto">Animal registration</h1>
     <br>
-    <form action="animal" method="post" enctype="multipart/form-data">
+    <form action="adoptation" method="post">
         <div class="form-group">
             <label class="font-l" for="name">Name:</label>
-            <input type="text" class="form-control" value="<c:out value="${animalWeb.name}" />" id="name" name="name"
+            <input type="text" class="form-control" value="<c:out value="${animal2.name}" />" id="name" name="name"
                    disabled>
         </div>
         <div class="form-group">

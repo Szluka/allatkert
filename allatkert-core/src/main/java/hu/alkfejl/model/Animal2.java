@@ -1,6 +1,6 @@
 package hu.alkfejl.model;
 
-public class AnimalWeb {
+public class Animal2 {
 
     private int id;
     private String name;
@@ -10,7 +10,7 @@ public class AnimalWeb {
     private String picture;
     private int adopted;
 
-    public AnimalWeb(int id, String name, int year, String specie, String intro, String picture, int adopted) {
+    public Animal2(int id, String name, int year, String specie, String intro, String picture, int adopted) {
         this.id = id;
         this.name = name;
         this.year = year;
@@ -20,13 +20,17 @@ public class AnimalWeb {
         this.adopted = adopted;
     }
 
-    public AnimalWeb(String name, int year, String specie, String intro, String picture, int adopted) {
+    public Animal2(String name, int year, String specie, String intro, String picture, int adopted) {
         this.name = name;
         this.year = year;
         this.specie = specie;
         this.intro = intro;
         this.picture = picture;
         this.adopted = adopted;
+    }
+
+    public Animal2() {
+
     }
 
     public int getAdopted() {

@@ -1,8 +1,7 @@
 package hu.alkfejl.dao;
 
 import hu.alkfejl.model.Adoptation;
-import hu.alkfejl.model.AdoptationWeb;
-import hu.alkfejl.model.AnimalWeb;
+import hu.alkfejl.model.Adoptation2;
 
 import java.io.IOException;
 import java.sql.*;
@@ -12,7 +11,8 @@ import java.util.Properties;
 
 public class AdoptationDaoImpl implements AdoptationDao {
 
-    private static final String INSERT_adoptation = "INSERT INTO adoptation (adoptiveId, animalId, date, donationType, donationValue, donationFreq) VALUES (?,?,?,?,?,?)";
+    private static final String INSERT_adoptation = "INSERT INTO adoption (adoptiveId, animalId, date, donationType, donationValue, donationFreq) VALUES (?,?,?,?,?,?)";
+    private static final String ALL_adoptation = "SELECT * from adoption";
     Properties props = new Properties();
     private String URL;
 
@@ -31,10 +31,10 @@ public class AdoptationDaoImpl implements AdoptationDao {
         List<Adoptation> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM adoption";
             Connection con = DriverManager.getConnection(URL);
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+            PreparedStatement stmt = con.prepareStatement(ALL_adoptation);
+            ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
                 Adoptation a = new Adoptation();
                 a.setId(rs.getInt("id"));
@@ -57,17 +57,17 @@ public class AdoptationDaoImpl implements AdoptationDao {
     /** WEB */
 
     @Override
-    public void add(AdoptationWeb adoptationWeb) {
+    public void add(Adoptation2 adoptation2) {
             try {
                 Connection con = DriverManager.getConnection(URL);
                 PreparedStatement statement = con.prepareStatement(INSERT_adoptation);
 
-                statement.setInt(1, adoptationWeb.getAdoptiveId());
-                statement.setInt(2, adoptationWeb.getAnimalId());
-                statement.setString(3, adoptationWeb.getDate());
-                statement.setString(4, adoptationWeb.getDonationType());
-                statement.setInt(5, adoptationWeb.getDonationValue());
-                statement.setString(6, adoptationWeb.getDonationFreq());
+                statement.setInt(1, adoptation2.getAdoptiveId());
+                statement.setInt(2, adoptation2.getAnimalId());
+                statement.setString(3, adoptation2.getDate());
+                statement.setString(4, adoptation2.getDonationType());
+                statement.setInt(5, adoptation2.getDonationValue());
+                statement.setString(6, adoptation2.getDonationFreq());
                 statement.execute();
                 con.close();
             } catch (SQLException e) {
